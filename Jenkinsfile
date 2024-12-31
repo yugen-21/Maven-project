@@ -29,7 +29,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube') { // Ensure this matches your SonarQube configuration in Jenkins
                     bat """
                     mvn sonar:sonar ^
-                      -Dsonar.projectKey=maven-project ^
+                      -Dsonar.projectKey=new ^
                       -Dsonar.sources=src/main/java ^
                       -Dsonar.tests=src/test/java ^
                       -Dsonar.exclusions=src/test/java/** ^
