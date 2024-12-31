@@ -33,6 +33,14 @@
     <artifactId>selenium-webdriver</artifactId>
     <version>4.10.0</version>
   </dependency>
+
+    <!-- Selenium WebDriver -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.12.0</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
