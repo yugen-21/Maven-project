@@ -29,12 +29,11 @@ pipeline {
                 withSonarQubeEnv('SonarQube') { // Ensure this matches your SonarQube configuration in Jenkins
                     bat """
                     mvn sonar:sonar ^
-                      -Dsonar.projectKey=new ^
-                      -Dsonar.sources=src/main/java ^
-                      -Dsonar.tests=src/test/java ^
-                      -Dsonar.exclusions=src/test/java/** ^
+                      -Dsonar.projectKey=maven ^
+                      -Dsonar.sources=src/main/java,src/test/java ^
                       -Dsonar.host.url=http://localhost:9000 ^
-                      -Dsonar.login=%SONAR_TOKEN%
+                      -Dsonar.login=%SONAR_TOKEN% ^
+                      -DskipTests -Dmaven.compile.skip=true
                     """
                 }
             }
