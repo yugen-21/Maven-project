@@ -30,7 +30,9 @@ pipeline {
                     bat """
                     mvn sonar:sonar ^
                       -Dsonar.projectKey=maven-project ^
-                      -Dsonar.sources=src/test/java/com/example/automation ^
+                      -Dsonar.sources=src/main/java ^
+                      -Dsonar.tests=src/test/java ^
+                      -Dsonar.exclusions=src/test/java/** ^
                       -Dsonar.host.url=http://localhost:9000 ^
                       -Dsonar.login=%SONAR_TOKEN%
                     """
@@ -48,3 +50,4 @@ pipeline {
         }
     }
 }
+
